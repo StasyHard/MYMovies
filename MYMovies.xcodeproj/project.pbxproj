@@ -81,14 +81,12 @@
 		56E3433A24487E7700D6B440 /* MYMovies */ = {
 			isa = PBXGroup;
 			children = (
-				56E3433B24487E7700D6B440 /* AppDelegate.swift */,
-				56E3433D24487E7700D6B440 /* SceneDelegate.swift */,
+				56E34360244885AB00D6B440 /* Application */,
 				56E3433F24487E7700D6B440 /* ViewController.swift */,
-				56E3434124487E7700D6B440 /* Main.storyboard */,
-				56E3434724487E7C00D6B440 /* Assets.xcassets */,
 				56E3434924487E7C00D6B440 /* LaunchScreen.storyboard */,
-				56E3434C24487E7C00D6B440 /* Info.plist */,
+				56E3434124487E7700D6B440 /* Main.storyboard */,
 				56E3434424487E7700D6B440 /* MYMovies.xcdatamodeld */,
+				56E34361244885EB00D6B440 /* Resources */,
 			);
 			path = MYMovies;
 			sourceTree = "<group>";
@@ -100,6 +98,24 @@
 				56E3435724487E7C00D6B440 /* Info.plist */,
 			);
 			path = MYMoviesTests;
+			sourceTree = "<group>";
+		};
+		56E34360244885AB00D6B440 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				56E3433B24487E7700D6B440 /* AppDelegate.swift */,
+				56E3433D24487E7700D6B440 /* SceneDelegate.swift */,
+				56E3434C24487E7C00D6B440 /* Info.plist */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		56E34361244885EB00D6B440 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				56E3434724487E7C00D6B440 /* Assets.xcassets */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -368,7 +384,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = VL3SPLW988;
-				INFOPLIST_FILE = MYMovies/Info.plist;
+				INFOPLIST_FILE = MYMovies/Application/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -386,7 +402,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = VL3SPLW988;
-				INFOPLIST_FILE = MYMovies/Info.plist;
+				INFOPLIST_FILE = MYMovies/Application/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
