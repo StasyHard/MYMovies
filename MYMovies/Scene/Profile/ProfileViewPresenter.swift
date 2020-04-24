@@ -19,28 +19,31 @@ protocol ProfileViewPresentation: class {
          dataRepository: DataRepositoryProtocol,
          router: RouterProtocol)
     
-    func actionButtonIsTapped()
+    func myMoviesButtonIsTapped()
 }
 
-final class ProfileViewPresenter: ProfileViewPresentation {
+final class ProfileViewPresenter {
+    
+    //MARK: - Open properties
     weak var view: ProfileViewInterface?
     let dataRepository: DataRepositoryProtocol?
     let router: RouterProtocol?
     
+        //MARK: - Init
     init(view: ProfileViewInterface, dataRepository: DataRepositoryProtocol, router: RouterProtocol) {
         self.view = view
         self.dataRepository = dataRepository
         self.router = router
     }
-    
-    func actionButtonIsTapped() {
+}
+
+extension ProfileViewPresenter: ProfileViewPresentation {
+    func myMoviesButtonIsTapped() {
+        //-------------------------------------------------------------Временные данные
         dataRepository?.giveResponse() { response in
             print(response)
         }
     }
-    
-    
-    
 }
 
 

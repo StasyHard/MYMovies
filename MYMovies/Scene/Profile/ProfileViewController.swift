@@ -43,7 +43,7 @@ class ProfileViewController: UIViewController {
     
     @objc private func settingsButtonTapped() {
         print("settingsButtonTapped")
-        presenter?.actionButtonIsTapped()
+        presenter?.myMoviesButtonIsTapped()
     }
 }
 
@@ -62,7 +62,7 @@ extension ProfileViewController: ProfileViewInterface {
 //MARK: - ProfileViewsActions protocol
 extension ProfileViewController: ProfileViewsActions {
     func didPressedMyMoviesButton() {
-        print("didPressedMyMoviesButton")
+        presenter?.myMoviesButtonIsTapped()
     }
     
     func didPressedSearchMoviesButton() {
