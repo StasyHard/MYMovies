@@ -25,11 +25,11 @@ protocol ProfileViewPresentation: class {
 final class ProfileViewPresenter {
     
     //MARK: - Open properties
-    weak var view: ProfileViewInterface?
-    let dataRepository: DataRepositoryProtocol?
-    let router: RouterProtocol?
+    private weak var view: ProfileViewInterface?
+    private let dataRepository: DataRepositoryProtocol?
+    private let router: RouterProtocol?
     
-        //MARK: - Init
+    //MARK: - Init
     init(view: ProfileViewInterface, dataRepository: DataRepositoryProtocol, router: RouterProtocol) {
         self.view = view
         self.dataRepository = dataRepository
@@ -37,6 +37,7 @@ final class ProfileViewPresenter {
     }
 }
 
+//MARK: - ProfileViewPresentation protocol
 extension ProfileViewPresenter: ProfileViewPresentation {
     func myMoviesButtonIsTapped() {
         //-------------------------------------------------------------Временные данные

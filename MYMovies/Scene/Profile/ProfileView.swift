@@ -15,10 +15,9 @@ protocol ProfileViewsActions: class {
 
 class ProfileView: UIView {
     
-    //MARK: - Open properties
-    weak var container: ProfileViewsActions?
-    
     //MARK: - Private properties
+    private weak var container: ProfileViewsActions?
+    
     private let searchMoviesButton: BlueWithShadowButton = {
         let button = BlueWithShadowButton(type: .roundedRect)
         button.setTitleAndFont(title: "Найти фильм или сериал", font: .boldSystemFont(ofSize: 17))

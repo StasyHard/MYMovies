@@ -9,18 +9,18 @@
 import UIKit
 
 protocol RouterMain {
-    var navigationController: UINavigationController? {get set}
-    var assemblyBuilder: AssemblyBuilderProtocol? {get set}
+    init(navigationController: UINavigationController, assemblyBuilder: AssemblyBuilderProtocol)
 }
 
 protocol RouterProtocol: RouterMain {
-    func initialViewController()
+    func transitionToInitialViewController()
+    func transitionToMyMoviesViewController()
 }
 
 final class Router: RouterProtocol {
     //MARK: - Properties
-    var navigationController: UINavigationController?
-    var assemblyBuilder: AssemblyBuilderProtocol?
+    private var navigationController: UINavigationController?
+    private var assemblyBuilder: AssemblyBuilderProtocol?
     
     //MARK: - LifeCycle
     init(navigationController: UINavigationController, assemblyBuilder: AssemblyBuilderProtocol) {
@@ -29,11 +29,17 @@ final class Router: RouterProtocol {
     }
     
     //MARK: - Metods
-    func initialViewController() {
+    func transitionToInitialViewController() {
         if let navigationController = navigationController {
             guard let mainViewController = assemblyBuilder?.createProfileModule(router: self)
                 else { return }
             navigationController.viewControllers = [mainViewController]
         }
     }
+    
+    func transitionToMyMoviesViewController() {
+        
+    }
+    
+    
 }
