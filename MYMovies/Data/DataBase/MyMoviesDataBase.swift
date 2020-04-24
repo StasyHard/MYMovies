@@ -13,6 +13,6 @@ protocol DataBaseProtocol {
     
 }
 
-class DataBase: DataBaseProtocol {
+class MyMoviesDataBase: DataBaseProtocol {
 
 }

@@ -16,8 +16,8 @@ class AssemblyModuleBuilder: AssemblyBuilderProtocol {
     
     func createProfileModule(router: RouterProtocol) -> UIViewController {
         let view = ProfileViewController()
-        let networkServise = NetworkServise()
-        let dataBase = DataBase()
+        let networkServise = TmdbNetworkServise()
+        let dataBase = MyMoviesDataBase()
         let dataRepository = DataRepository(networkServise: networkServise, dataBase: dataBase)
         let presenter = ProfileViewPresenter(view: view, dataRepository: dataRepository, router: router)
         view.presenter = presenter

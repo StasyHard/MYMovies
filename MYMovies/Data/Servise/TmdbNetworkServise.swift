@@ -13,7 +13,7 @@ protocol NetworkServiseProtocol {
     func findMovies(completion: @escaping ([Movie?]) -> Void)
 }
 
-class NetworkServise: NetworkServiseProtocol {
+class TmdbNetworkServise: NetworkServiseProtocol {
     private let path = "https://api.themoviedb.org"
     private let apiKey = MyTMDBApiKey
     
