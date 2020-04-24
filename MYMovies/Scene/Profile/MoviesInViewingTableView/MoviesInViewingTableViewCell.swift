@@ -37,6 +37,7 @@ class MoviesInViewingTableViewCell: UITableViewCell, ReusableView {
     
     //MARK: - Open metods
     func setPoster(_ name: String) {
+        poster.load(url: URL(string: "https://image.tmdb.org/t/p/w200" + name)!)
         poster.image = UIImage(named: name)
     }
     
