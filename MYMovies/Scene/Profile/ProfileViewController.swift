@@ -65,8 +65,8 @@ extension ProfileViewController: ProfileViewsActions {
         presenter?.myMoviesButtonIsTapped()
     }
     
-    func didPressedSearchMoviesButton() {
-        print("didPressedSearchMoviesButton")
+    func didPressedSearchMovieButton() {
+        presenter?.searchMovieButtonIsTapped()
     }
 }
 

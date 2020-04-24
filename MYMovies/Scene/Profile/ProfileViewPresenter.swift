@@ -6,7 +6,7 @@
 //  Copyright © 2020 GermanyHome. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 //передает в контроллер информацию, когда нужно обновить UI
 protocol ProfileViewInterface: class {
@@ -20,6 +20,7 @@ protocol ProfileViewPresentation: class {
          dataRepository: DataRepositoryProtocol,
          router: RouterProtocol)
     
+    func searchMovieButtonIsTapped()
     func myMoviesButtonIsTapped()
     func onViewDidLoad()
 }
@@ -47,9 +48,6 @@ final class ProfileViewPresenter {
             }
         }
     }
-    
-    
-    
     //MARK: - Init
     init(view: ProfileViewInterface, dataRepository: DataRepositoryProtocol, router: RouterProtocol) {
         self.view = view
@@ -60,7 +58,6 @@ final class ProfileViewPresenter {
 
 //MARK: - ProfileViewPresentation protocol
 extension ProfileViewPresenter: ProfileViewPresentation {
-    
     func onViewDidLoad() {
         var movies = [MovieInViewing]()
         //-------------------------------------------------------------Временные данные
@@ -77,7 +74,11 @@ extension ProfileViewPresenter: ProfileViewPresentation {
     }
     
     func myMoviesButtonIsTapped() {
-        
+        router?.transitionToMyMovies()
+    }
+    
+    func searchMovieButtonIsTapped() {
+        router?.transitionToSearchMovie(from: (view as? UIViewController)!)
     }
 }
 
