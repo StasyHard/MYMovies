@@ -28,11 +28,11 @@ class ProfileViewController: UIViewController {
         title = "Профиль"
         setupSettingsButton()
         
-        //---------------------------------------------------------------Временные меры
-        let provider = MoviesInViewingTableViewProvider()
-        setTableViewProvider(provider)
-        reloadDataInTableView()
-        
+//        //---------------------------------------------------------------Временные меры
+//        let provider = MoviesInViewingTableViewProvider()
+//        setTableViewProvider(provider)
+        //reloadDataInTableView()
+        presenter?.onViewDidLoad()
     }
     
     //MARK: - Private metods

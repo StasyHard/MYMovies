@@ -14,6 +14,7 @@
 		56358D172449D07100A3000C /* MoviesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56358D162449D07100A3000C /* MoviesResponse.swift */; };
 		56358D1A2449DAEE00A3000C /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56358D192449DAEE00A3000C /* Movie.swift */; };
 		56614D352453016700A29E6F /* ConstantKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56614D342453016700A29E6F /* ConstantKeys.swift */; };
+		56614D3824533BDC00A29E6F /* UIImageView+loadFromURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56614D3724533BDC00A29E6F /* UIImageView+loadFromURL.swift */; };
 		567AFF0924489B8E00CE959E /* DataRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 567AFF0824489B8E00CE959E /* DataRepository.swift */; };
 		567AFF0B24489D0900CE959E /* ProfileViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 567AFF0A24489D0900CE959E /* ProfileViewPresenter.swift */; };
 		567AFF0D2448A61F00CE959E /* TmdbNetworkServise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 567AFF0C2448A61F00CE959E /* TmdbNetworkServise.swift */; };
@@ -56,6 +57,7 @@
 		56358D162449D07100A3000C /* MoviesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesResponse.swift; sourceTree = "<group>"; };
 		56358D192449DAEE00A3000C /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		56614D342453016700A29E6F /* ConstantKeys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstantKeys.swift; sourceTree = "<group>"; };
+		56614D3724533BDC00A29E6F /* UIImageView+loadFromURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+loadFromURL.swift"; sourceTree = "<group>"; };
 		567AFF0824489B8E00CE959E /* DataRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataRepository.swift; sourceTree = "<group>"; };
 		567AFF0A24489D0900CE959E /* ProfileViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewPresenter.swift; sourceTree = "<group>"; };
 		567AFF0C2448A61F00CE959E /* TmdbNetworkServise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TmdbNetworkServise.swift; sourceTree = "<group>"; };
@@ -162,6 +164,7 @@
 				56D5DD68244DFA1C000BB6BA /* UIColor+appColors.swift */,
 				561D5E5F2451A9BA001A5BCB /* AppSizes.swift */,
 				561D5E612451BA97001A5BCB /* ReusableView.swift */,
+				56614D3724533BDC00A29E6F /* UIImageView+loadFromURL.swift */,
 			);
 			path = Extentions;
 			sourceTree = "<group>";
@@ -378,6 +381,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5682060A24508880007F9A44 /* MoviesInViewingTableViewHeader.swift in Sources */,
+				56614D3824533BDC00A29E6F /* UIImageView+loadFromURL.swift in Sources */,
 				56358D172449D07100A3000C /* MoviesResponse.swift in Sources */,
 				561D5E602451A9BA001A5BCB /* AppSizes.swift in Sources */,
 				567AFF0F2448A8A500CE959E /* MyMoviesDataBase.swift in Sources */,
