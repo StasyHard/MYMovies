@@ -70,3 +70,5 @@ iOS-UITests/Credentials-*.plist
 
 # Brand Assets
 iOS/assets-ios-brand.generated.xcassets
+
+ConstantKeys.swift
