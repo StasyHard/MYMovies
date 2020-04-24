@@ -43,7 +43,6 @@ class ProfileView: UIView {
     }()
     
     //MARK: Views size properties
-    private let stdOffset: CGFloat = 16.0
     private let searchButtonHeight: CGFloat = 40.0
     private let addMyMoviesButtonHeight: CGFloat = 110.0
     private let MoviesInViewingTableViewHeight: CGFloat = 320.0
@@ -69,7 +68,7 @@ class ProfileView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-        //MARK: - Open metods
+    //MARK: - Open metods
     func setMoviesInViewingTableViewProvider(_ provider: TableViewProvider) {
         moviesInViewingTableView.delegate = provider
         moviesInViewingTableView.dataSource = provider
@@ -82,66 +81,22 @@ class ProfileView: UIView {
     private func addSearrchMoviewButton() {
         addSubview(searchMoviesButton)
         
-        NSLayoutConstraint(item: searchMoviesButton,
-                           attribute: .top,
-                           relatedBy: .equal,
-                           toItem: safeAreaLayoutGuide,
-                           attribute: .top,
-                           multiplier: 1.0,
-                           constant: stdOffset).isActive = true
-        NSLayoutConstraint(item: searchMoviesButton,
-                           attribute: .leading,
-                           relatedBy: .equal,
-                           toItem: self,
-                           attribute: .leading,
-                           multiplier: 1.0,
-                           constant: stdOffset).isActive = true
-        NSLayoutConstraint(item: searchMoviesButton,
-                           attribute: .trailing,
-                           relatedBy: .equal,
-                           toItem: self,
-                           attribute: .trailing,
-                           multiplier: 1.0,
-                           constant: -stdOffset).isActive = true
-        NSLayoutConstraint(item: searchMoviesButton,
-                           attribute: .height,
-                           relatedBy: .equal,
-                           toItem: .none,
-                           attribute: .notAnAttribute,
-                           multiplier: 1.0,
-                           constant: searchButtonHeight).isActive = true
+        NSLayoutConstraint.activate([
+            searchMoviesButton.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: AppSizes.stdOffset),
+            searchMoviesButton.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: AppSizes.stdOffset),
+            searchMoviesButton.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -AppSizes.stdOffset),
+            searchMoviesButton.heightAnchor.constraint(equalToConstant: searchButtonHeight)
+        ])
     }
     
     private func addMyMoviesButton() {
         addSubview(myMoviesButton)
-        NSLayoutConstraint(item: myMoviesButton,
-                           attribute: .top,
-                           relatedBy: .equal,
-                           toItem: searchMoviesButton,
-                           attribute: .bottom,
-                           multiplier: 1.0,
-                           constant: stdOffset).isActive = true
-        NSLayoutConstraint(item: myMoviesButton,
-                           attribute: .leading,
-                           relatedBy: .equal,
-                           toItem: self,
-                           attribute: .leading,
-                           multiplier: 1.0,
-                           constant: stdOffset).isActive = true
-        NSLayoutConstraint(item: myMoviesButton,
-                           attribute: .trailing,
-                           relatedBy: .equal,
-                           toItem: self,
-                           attribute: .trailing,
-                           multiplier: 1.0,
-                           constant: -stdOffset).isActive = true
-        NSLayoutConstraint(item: myMoviesButton,
-                           attribute: .height,
-                           relatedBy: .equal,
-                           toItem: .none,
-                           attribute: .notAnAttribute,
-                           multiplier: 1.0,
-                           constant: addMyMoviesButtonHeight).isActive = true
+        NSLayoutConstraint.activate([
+            myMoviesButton.topAnchor.constraint(equalTo: searchMoviesButton.bottomAnchor, constant: AppSizes.stdOffset),
+            myMoviesButton.leadingAnchor.constraint(equalTo: searchMoviesButton.leadingAnchor),
+            myMoviesButton.trailingAnchor.constraint(equalTo: searchMoviesButton.trailingAnchor),
+            myMoviesButton.heightAnchor.constraint(equalToConstant: addMyMoviesButtonHeight)
+        ])
     }
     
     private func addForvardImage(in view: UIView) {
@@ -149,54 +104,22 @@ class ProfileView: UIView {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.image = image.withTintColor(.white)
-
+        
         view.addSubview(imageView)
-        NSLayoutConstraint(item: imageView,
-                           attribute: .trailing,
-                           relatedBy: .equal,
-                           toItem: view,
-                           attribute: .trailing,
-                           multiplier: 1.0,
-                           constant: -stdOffset).isActive = true
-        NSLayoutConstraint(item: imageView,
-                           attribute: .centerY,
-                           relatedBy: .equal,
-                           toItem: view,
-                           attribute: .centerY,
-                           multiplier: 1.0,
-                           constant: 0).isActive = true
+        NSLayoutConstraint.activate([
+            imageView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -AppSizes.stdOffset),
+            imageView.centerYAnchor.constraint(equalTo: view.centerYAnchor)
+        ])
     }
     
     private func addMoviesInViewingTableView() {
         addSubview(moviesInViewingTableView)
-        NSLayoutConstraint(item: moviesInViewingTableView,
-                           attribute: .top,
-                           relatedBy: .equal,
-                           toItem: myMoviesButton,
-                           attribute: .bottom,
-                           multiplier: 1.0,
-                           constant: stdOffset).isActive = true
-        NSLayoutConstraint(item: moviesInViewingTableView,
-                           attribute: .leading,
-                           relatedBy: .equal,
-                           toItem: self,
-                           attribute: .leading,
-                           multiplier: 1.0,
-                           constant: 0).isActive = true
-        NSLayoutConstraint(item: moviesInViewingTableView,
-                           attribute: .trailing,
-                           relatedBy: .equal,
-                           toItem: self,
-                           attribute: .trailing,
-                           multiplier: 1.0,
-                           constant: 0).isActive = true
-        NSLayoutConstraint(item: moviesInViewingTableView,
-                           attribute: .height,
-                           relatedBy: .equal,
-                           toItem: .none,
-                           attribute: .notAnAttribute,
-                           multiplier: 1.0,
-                           constant: MoviesInViewingTableViewHeight).isActive = true
+        NSLayoutConstraint.activate([
+            moviesInViewingTableView.topAnchor.constraint(equalTo: myMoviesButton.bottomAnchor, constant: AppSizes.stdOffset),
+            moviesInViewingTableView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+            moviesInViewingTableView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+            moviesInViewingTableView.heightAnchor.constraint(equalToConstant: MoviesInViewingTableViewHeight)
+        ])
     }
     
     private func registerMoviesInViewingTableViewCell() {
