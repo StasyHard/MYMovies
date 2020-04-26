@@ -11,5 +11,5 @@ import Foundation
 struct MovieInViewing {
     let poster: String
     let title: String
-    let breakPoint: String
+    let breakPoint: String?
 }

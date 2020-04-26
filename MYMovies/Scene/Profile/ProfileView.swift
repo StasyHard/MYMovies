@@ -9,7 +9,7 @@
 import UIKit
 
 protocol ProfileViewsActions: class {
-    func didPressedSearchMoviesButton()
+    func didPressedSearchMovieButton()
     func didPressedMyMoviesButton()
 }
 
@@ -134,7 +134,7 @@ class ProfileView: UIView {
     
     //MARK: - ProfileViewsActions methods
     @objc private func searchMoviesButtonTapped() {
-        container?.didPressedSearchMoviesButton()
+        container?.didPressedSearchMovieButton()
     }
     
     @objc private func myMoviesButtonTapped() {

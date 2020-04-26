@@ -12,10 +12,11 @@ final class MoviesInViewingTableViewProvider: NSObject, TableViewProvider {
     
     // MARK: Open properties
     //var data = [MovieInViewing]()
-    var data = [
-        MovieInViewing(poster: "vikings", title: "Викинги", breakPoint: "1 сезон 4 серия"),
-        MovieInViewing(poster: "vikings", title: "Однажды в Ирландии", breakPoint: "1 час 41 мин"),
-        MovieInViewing(poster: "vikings", title: "Звездные воины: Скайуокер. Восход. Ldf", breakPoint: "1 час 41 мин")]
+    var data = [MovieInViewing
+//        MovieInViewing(poster: "vikings", title: "Викинги", breakPoint: "1 сезон 4 серия"),
+//        MovieInViewing(poster: "vikings", title: "Однажды в Ирландии", breakPoint: "1 час 41 мин"),
+//        MovieInViewing(poster: "vikings", title: "Звездные воины: Скайуокер. Восход. Ldf", breakPoint: "1 час 41 мин")
+    ]()
     
     var didSelectItem: ((_ atIndex: Int) -> Void)?
     
@@ -31,9 +32,10 @@ final class MoviesInViewingTableViewProvider: NSObject, TableViewProvider {
             withIdentifier: MoviesInViewingTableViewCell.reuseIdD,
             for: indexPath
             ) as? MoviesInViewingTableViewCell else { return UITableViewCell() }
+        
         let viewModel = data[indexPath.row]
         cell.setPoster(viewModel.poster)
-        cell.setTitles(title: viewModel.title, subTitle: viewModel.breakPoint)
+        cell.setTitles(title: viewModel.title, subTitle: "1 час 41 мин")
         return cell
     }
     

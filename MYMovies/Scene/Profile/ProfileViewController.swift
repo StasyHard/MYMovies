@@ -28,11 +28,11 @@ class ProfileViewController: UIViewController {
         title = "Профиль"
         setupSettingsButton()
         
-        //---------------------------------------------------------------Временные меры
-        let provider = MoviesInViewingTableViewProvider()
-        setTableViewProvider(provider)
-        reloadDataInTableView()
-        
+//        //---------------------------------------------------------------Временные меры
+//        let provider = MoviesInViewingTableViewProvider()
+//        setTableViewProvider(provider)
+        //reloadDataInTableView()
+        presenter?.onViewDidLoad()
     }
     
     //MARK: - Private metods
@@ -65,8 +65,8 @@ extension ProfileViewController: ProfileViewsActions {
         presenter?.myMoviesButtonIsTapped()
     }
     
-    func didPressedSearchMoviesButton() {
-        print("didPressedSearchMoviesButton")
+    func didPressedSearchMovieButton() {
+        presenter?.searchMovieButtonIsTapped()
     }
 }
 
