@@ -15,7 +15,7 @@ protocol RouterMain {
 protocol RouterProtocol: RouterMain {
     func transitionToInitialViewController()
     func transitionToMyMovies()
-    func transitionToSearchMovie(from: UIViewController)
+    func transitionToSearchMovie(from vc: UIViewController)
 }
 
 final class Router: RouterProtocol {
@@ -49,15 +49,10 @@ final class Router: RouterProtocol {
         }
     }
     
-    func transitionToSearchMovie(from: UIViewController) {
-        if let navigationController = navigationController {
-            guard let searchMovieViewController = assemblyBuilder?
-                .createSearchMovieModule(router: self)
-                else { return }
-            
-            navigationController.pushViewController(searchMovieViewController,
-                                                    animated: true)
-        }
+    func transitionToSearchMovie(from vc: UIViewController) {
+        guard let searchMovieViewController = assemblyBuilder?.createSearchMovieModule(router: self)
+            else { return }
+        vc.present(searchMovieViewController, animated: true, completion: nil)
     }
     
 }

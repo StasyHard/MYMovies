@@ -78,7 +78,7 @@ extension ProfileViewPresenter: ProfileViewPresentation {
     }
     
     func searchMovieButtonIsTapped() {
-        router?.transitionToSearchMovie(from: (view as? UIViewController)!)
+        router?.transitionToSearchMovie(from: view as! UIViewController)
     }
 }
 

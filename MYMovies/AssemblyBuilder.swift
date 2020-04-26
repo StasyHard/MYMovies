@@ -35,7 +35,9 @@ class AssemblyModuleBuilder: AssemblyBuilderProtocol {
         return view
     }
     func createSearchMovieModule(router: RouterProtocol) -> UIViewController {
-        let view = MyMoviesViewController()
+        let view = SearchMovieViewController()
+        let presenter = SearchMoviePresenter(view: view, dataRepository: dataRepository, router: router)
+        view.presenter = presenter
         return view
     }
 }
