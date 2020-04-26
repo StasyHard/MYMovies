@@ -32,3 +32,7 @@ class SearchMovieViewController: UIViewController {
 extension SearchMovieViewController: SearchMovieViewInterface {
     
 }
+
+extension SearchMovieViewController: SearchMovieViewsActions {
+    
+}

@@ -8,14 +8,29 @@
 
 import UIKit
 
+protocol SearchMovieViewsActions: class {
+    
+}
+
 class SearchMovieView: UIView {
-
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
+    
+    //MARK: - Private properties
+    private weak var container: SearchMovieViewsActions?
+    
+    //MARK: - Init
+    init(frame: CGRect, container: SearchMovieViewsActions) {
+        super.init(frame: frame)
+        self.container = container
+        self.backgroundColor = UIColor.AppColors.backgroundColor
     }
-    */
-
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        print("Select init with container")
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
 }
