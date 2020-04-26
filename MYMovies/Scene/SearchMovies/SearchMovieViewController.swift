@@ -14,7 +14,7 @@ class SearchMovieViewController: UIViewController {
     var presenter: SearchMoviePresenter?
     
     //MARK: - Private properties
-    private lazy var profileView = view as? SearchMovieView
+    private lazy var searchMovieView = view as? SearchMovieView
     
     override func loadView() {
            view = SearchMovieView(frame: UIScreen.main.bounds, container: self)
@@ -24,6 +24,11 @@ class SearchMovieViewController: UIViewController {
         super.viewDidLoad()
     
         setupNavigationItem()
+        
+        //---------------------------------------------------------------------Временно
+        let provider = SearchMovietableViewProvider()
+        searchMovieView?.setSearchMovietableViewProvider(provider)
+        //searchMovieView?.setSearchControllerProvider(self)
     }
     
     private func setupNavigationItem() {
@@ -38,4 +43,10 @@ extension SearchMovieViewController: SearchMovieViewInterface {
 
 extension SearchMovieViewController: SearchMovieViewsActions {
     
+}
+
+extension SearchMovieViewController: UISearchResultsUpdating, UISearchBarDelegate {
+    func updateSearchResults(for searchController: UISearchController) {
+        print("Введен текст")
+    }
 }

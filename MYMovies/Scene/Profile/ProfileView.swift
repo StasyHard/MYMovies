@@ -79,6 +79,14 @@ class ProfileView: UIView {
     }
     
     //MARK: - Private metods
+    @objc private func searchMoviesButtonTapped() {
+        container?.didPressedSearchMovieButton()
+    }
+    
+    @objc private func myMoviesButtonTapped() {
+        container?.didPressedMyMoviesButton()
+    }
+    
     private func addSearrchMoviewButton() {
         addSubview(searchMoviesButton)
         
@@ -131,15 +139,6 @@ class ProfileView: UIView {
             MoviesInViewingTableViewHeader.self,
             forHeaderFooterViewReuseIdentifier: MoviesInViewingTableViewHeader.reuseIdD)
         moviesInViewingTableView.register(MoviesInViewingTableViewFooter.self, forHeaderFooterViewReuseIdentifier: MoviesInViewingTableViewFooter.reuseIdD)
-    }
-    
-    //MARK: - ProfileViewsActions methods
-    @objc private func searchMoviesButtonTapped() {
-        container?.didPressedSearchMovieButton()
-    }
-    
-    @objc private func myMoviesButtonTapped() {
-        container?.didPressedMyMoviesButton()
     }
     
     

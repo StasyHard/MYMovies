@@ -18,9 +18,9 @@ class SearchMovieView: UIView {
     private weak var container: SearchMovieViewsActions?
     
     private let searchMovietableView: UITableView = {
-        let tableView = UITableView(frame: .zero, style: .plain)
+        let tableView = UITableView(frame: .zero, style: .grouped)
         tableView.translatesAutoresizingMaskIntoConstraints = false
-        //tableView.tableHeaderView?.backgroundColor = UIColor.AppColors.backgroundColor
+        //tableView.backgroundColor = UIColor.AppColors.backgroundColor
         tableView.rowHeight = 80
         return tableView
     }()
@@ -28,13 +28,15 @@ class SearchMovieView: UIView {
     private let searchController: UISearchController = {
         let searchController = UISearchController(searchResultsController: nil)
         searchController.obscuresBackgroundDuringPresentation = false
+        searchController.definesPresentationContext = true
         searchController.searchBar.placeholder = "Найти фильм или сериал"
-        //searchController.searchBar.showsCancelButton = true
         searchController.searchBar.searchBarStyle = .minimal
         searchController.searchBar.setValue("Отменить", forKey: "cancelButtonText")
         //searchController.searchBar.scopeButtonTitles = ["Все результаты", "Фильмы", "Сериалы"]
+        searchController.hidesNavigationBarDuringPresentation = false
         searchController.searchBar.sizeToFit()
         searchController.searchBar.backgroundColor = UIColor.AppColors.backgroundColor
+        //searchController.searchBar.translatesAutoresizingMaskIntoConstraints = false
         return searchController
     }()
     
@@ -45,7 +47,8 @@ class SearchMovieView: UIView {
         self.backgroundColor = UIColor.AppColors.backgroundColor
         
         addSearchMovietableView()
-        addSearchBar() 
+        registerSearchMovietableViewCell()
+        addSearchBar()
     }
     
     override init(frame: CGRect) {
@@ -57,7 +60,18 @@ class SearchMovieView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-        //MARK: - Private metods
+    //MARK: - Open metods
+    func setSearchControllerProvider(_ provider: SearchMovieViewController) {
+        searchController.searchBar.delegate = provider
+        searchController.searchResultsUpdater = provider
+    }
+    
+    func setSearchMovietableViewProvider(_ provider: TableViewProvider) {
+        searchMovietableView.delegate = provider
+        searchMovietableView.dataSource = provider
+    }
+    
+    //MARK: - Private metods
     private func addSearchMovietableView() {
         addSubview(searchMovietableView)
         NSLayoutConstraint.activate([
@@ -68,18 +82,23 @@ class SearchMovieView: UIView {
         ])
     }
     
-    private func addSearchBar() {
-        searchController.searchResultsUpdater = self
-        searchController.searchBar.delegate = self
-        searchMovietableView.tableHeaderView = searchController.searchBar
+    private func registerSearchMovietableViewCell() {
+        searchMovietableView.register(
+            SearchTableViewCell.self,
+            forCellReuseIdentifier: SearchTableViewCell.reuseIdD)
     }
     
+    private func addSearchBar() {
+        searchMovietableView.tableHeaderView = searchController.searchBar
+        //searchMovietableView.tableHeaderView?.addSubview(searchController.searchBar)
+ //       NSLayoutConstraint.activate([
+//            searchController.searchBar.topAnchor.constraint(equalTo: searchMovietableView.topAnchor),
+//            searchController.searchBar.leadingAnchor.constraint(equalTo: searchMovietableView.leadingAnchor),
+//            searchController.searchBar.trailingAnchor.constraint(equalTo: searchMovietableView.trailingAnchor),
+//            //searchController.searchBar.heightAnchor.constraint(equalToConstant: 40.0),
+//            searchController.searchBar.bottomAnchor.constraint(equalTo: searchMovietableView.bottomAnchor)
+//        ])
+    }
 }
 
-extension SearchMovieView: UISearchResultsUpdating, UISearchBarDelegate {
-    func updateSearchResults(for searchController: UISearchController) {
-        
-    }
-    
-    
-}
+
