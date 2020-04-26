@@ -11,7 +11,6 @@ import UIKit
 final class MoviesInViewingTableViewProvider: NSObject, TableViewProvider {
     
     // MARK: Open properties
-    //var data = [MovieInViewing]()
     var data = [MovieInViewing
 //        MovieInViewing(poster: "vikings", title: "Викинги", breakPoint: "1 сезон 4 серия"),
 //        MovieInViewing(poster: "vikings", title: "Однажды в Ирландии", breakPoint: "1 час 41 мин"),

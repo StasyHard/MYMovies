@@ -16,6 +16,10 @@ class SearchMovieViewController: UIViewController {
     //MARK: - Private properties
     private lazy var profileView = view as? SearchMovieView
     
+    override func loadView() {
+           view = SearchMovieView(frame: UIScreen.main.bounds, container: self)
+       }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     
@@ -23,7 +27,6 @@ class SearchMovieViewController: UIViewController {
     }
     
     private func setupNavigationItem() {
-        view.backgroundColor = .white
         title = "Поиск"
     }
 

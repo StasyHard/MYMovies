@@ -52,6 +52,7 @@ class ProfileView: UIView {
         super.init(frame: frame)
         self.container = container
         self.backgroundColor = UIColor.AppColors.backgroundColor
+        
         addSearrchMoviewButton()
         addMyMoviesButton()
         addForvardImage(in: myMoviesButton)

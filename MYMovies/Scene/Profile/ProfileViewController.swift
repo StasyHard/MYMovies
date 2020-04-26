@@ -19,7 +19,6 @@ class ProfileViewController: UIViewController {
      //MARK: - Life cycle
     override func loadView() {
         view = ProfileView(frame: UIScreen.main.bounds, container: self)
-        //устаноовить делегата
     }
     
     override func viewDidLoad() {
