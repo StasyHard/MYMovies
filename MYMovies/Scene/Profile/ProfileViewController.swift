@@ -25,17 +25,17 @@ class ProfileViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        title = "Профиль"
-        setupSettingsButton()
-        
+        setupNavigationItem()
 //        //---------------------------------------------------------------Временные меры
-//        let provider = MoviesInViewingTableViewProvider()
-//        setTableViewProvider(provider)
-        //reloadDataInTableView()
         presenter?.onViewDidLoad()
     }
     
     //MARK: - Private metods
+    private func setupNavigationItem() {
+        title = "Профиль"
+        setupSettingsButton()
+    }
+    
     private func setupSettingsButton() {
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Настройки", style: .plain, target: self, action: #selector(settingsButtonTapped))
     }

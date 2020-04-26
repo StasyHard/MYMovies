@@ -13,12 +13,18 @@ class SearchMovieViewController: UIViewController {
     //MARK: - Open properties
     var presenter: SearchMoviePresenter?
     
+    //MARK: - Private properties
+    private lazy var profileView = view as? SearchMovieView
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+    
+        setupNavigationItem()
+    }
+    
+    private func setupNavigationItem() {
         view.backgroundColor = .white
         title = "Поиск"
-        
     }
 
 }
