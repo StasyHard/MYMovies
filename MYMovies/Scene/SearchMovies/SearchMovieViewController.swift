@@ -17,8 +17,8 @@ class SearchMovieViewController: UIViewController {
         super.viewDidLoad()
         
         view.backgroundColor = .white
-
-      
+        title = "Поиск"
+        
     }
 
 }

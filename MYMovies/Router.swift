@@ -52,7 +52,10 @@ final class Router: RouterProtocol {
     func transitionToSearchMovie(from vc: UIViewController) {
         guard let searchMovieViewController = assemblyBuilder?.createSearchMovieModule(router: self)
             else { return }
-        vc.present(searchMovieViewController, animated: true, completion: nil)
+        let navViewController = UINavigationController(rootViewController: searchMovieViewController)
+        vc.navigationController?.present(navViewController,
+                                         animated: true,
+                                         completion: nil)
     }
     
 }
