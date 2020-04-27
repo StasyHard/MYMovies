@@ -45,7 +45,8 @@ extension SearchMovieViewController: SearchMovieViewsActions {
     
 }
 
-extension SearchMovieViewController: UISearchResultsUpdating, UISearchBarDelegate {
+extension SearchMovieViewController: SearchTableViewProvider {
+    
     func updateSearchResults(for searchController: UISearchController) {
         print("Введен текст")
     }
