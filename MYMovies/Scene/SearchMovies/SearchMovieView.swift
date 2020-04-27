@@ -29,7 +29,7 @@ class SearchMovieView: UIView {
         self.backgroundColor = UIColor.AppColors.backgroundColor
         
         addSearchMovietableView()
-        searchMovietableView.setSearchCTableViewProvider(container)
+        //searchMovietableView.setSearchCTableViewProvider(container)
         registerSearchMovietableViewCell()
     }
     
@@ -46,6 +46,10 @@ class SearchMovieView: UIView {
     func setSearchMovietableViewProvider(_ provider: TableViewProvider) {
         searchMovietableView.delegate = provider
         searchMovietableView.dataSource = provider
+    }
+    
+    func reloadDataSearchMovietableView() {
+        searchMovietableView.reloadData()
     }
     
     //MARK: - Private metods

@@ -11,18 +11,17 @@ import UIKit
 class SearchBarInHeaderTableView: UITableView {
     
     private let searchController: UISearchController = {
-        let searchController = UISearchController(searchResultsController: nil)
-        searchController.obscuresBackgroundDuringPresentation = true
+        let сontroller = UISearchController(searchResultsController: nil)
+        сontroller.obscuresBackgroundDuringPresentation = true
         //searchController.definesPresentationContext = false
-        searchController.searchBar.placeholder = "Найти фильм или сериал"
-        searchController.searchBar.searchBarStyle = .minimal
-        searchController.searchBar.setValue("Отменить", forKey: "cancelButtonText")
+        сontroller.searchBar.placeholder = "Найти фильм или сериал"
+        сontroller.searchBar.searchBarStyle = .minimal
+        сontroller.searchBar.setValue("Отменить", forKey: "cancelButtonText")
         //searchController.searchBar.scopeButtonTitles = ["Все результаты", "Фильмы", "Сериалы"]
-        searchController.hidesNavigationBarDuringPresentation = false
-        searchController.searchBar.sizeToFit()
-        searchController.searchBar.backgroundColor = UIColor.AppColors.backgroundColor
-        //searchController.searchBar.translatesAutoresizingMaskIntoConstraints = false
-        return searchController
+        сontroller.hidesNavigationBarDuringPresentation = false
+        сontroller.searchBar.sizeToFit()
+        сontroller.searchBar.backgroundColor = UIColor.AppColors.backgroundColor
+        return сontroller
     }()
     
     //MARK: - Init
@@ -30,8 +29,6 @@ class SearchBarInHeaderTableView: UITableView {
         super.init(frame: frame, style: style)
         
         translatesAutoresizingMaskIntoConstraints = false
-        rowHeight = 80
-        
         addSearchBar()
     }
     

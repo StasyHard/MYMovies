@@ -10,4 +10,4 @@ import UIKit
 
 protocol TableViewProvider: UITableViewDelegate, UITableViewDataSource { }
 
-protocol SearchTableViewProvider: UISearchResultsUpdating, UISearchBarDelegate { }
+protocol SearchTableViewProvider: UISearchResultsUpdating, UISearchBarDelegate, UISearchControllerDelegate { }

@@ -65,5 +65,6 @@ final class MoviesInViewingTableViewProvider: NSObject, TableViewProvider {
     //MARK: Delegate
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         didSelectItem?(indexPath.row)
+        print("select")
     }
 }

@@ -10,19 +10,28 @@ import UIKit
 
 class SearchMovietableViewProvider: NSObject, TableViewProvider {
     
-//    func numberOfSections(in tableView: UITableView) -> Int {
-//        return 1
-//    }
+    
+    let data = ["Популярные фильмы", "Популярные сериалы", "Новые фильмы", "Новые сериалы"]
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return data.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: SearchTableViewCell.reuseIdD, for: indexPath) as! SearchTableViewCell
-        cell.textLabel?.text = "Популярные фильмы"
+        guard let cell = tableView.dequeueReusableCell(
+            withIdentifier: SearchTableViewCell.reuseIdD,
+            for: indexPath) as? SearchTableViewCell
+            else { return UITableViewCell() }
+        
+        let viewModel = data[indexPath.row]
+        cell.textLabel?.text = viewModel
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("select")
+    }
+    
     
 //    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
 //        return 150

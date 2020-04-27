@@ -50,4 +50,9 @@ extension SearchMovieViewController: SearchTableViewProvider {
     func updateSearchResults(for searchController: UISearchController) {
         print("Введен текст")
     }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searchMovieView?.reloadDataSearchMovietableView()
+    }
+    
 }

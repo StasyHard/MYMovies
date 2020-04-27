@@ -187,6 +187,30 @@
 			path = SearchMovieTableView;
 			sourceTree = "<group>";
 		};
+		567FBEF72456DA21000C18B7 /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				56D5DD62244DCC2A000BB6BA /* BlueWithShadowButton.swift */,
+				561D5E652451BFE1001A5BCB /* BlueTextWithoutBackgroundButton.swift */,
+			);
+			path = Buttons;
+			sourceTree = "<group>";
+		};
+		567FBEF82456DA2E000C18B7 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				56DDFC97244CADA00084E733 /* DefaultSearchController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		567FBEF92456DA76000C18B7 /* TableViews */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = TableViews;
+			sourceTree = "<group>";
+		};
 		568205FF24504402007F9A44 /* MoviesInViewingTableView */ = {
 			isa = PBXGroup;
 			children = (
@@ -332,9 +356,9 @@
 		56F8191A244CB9CB00577482 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				56DDFC97244CADA00084E733 /* DefaultSearchController.swift */,
-				56D5DD62244DCC2A000BB6BA /* BlueWithShadowButton.swift */,
-				561D5E652451BFE1001A5BCB /* BlueTextWithoutBackgroundButton.swift */,
+				567FBEF92456DA76000C18B7 /* TableViews */,
+				567FBEF82456DA2E000C18B7 /* Controllers */,
+				567FBEF72456DA21000C18B7 /* Buttons */,
 			);
 			path = View;
 			sourceTree = "<group>";
