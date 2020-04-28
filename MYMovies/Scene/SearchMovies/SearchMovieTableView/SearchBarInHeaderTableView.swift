@@ -30,6 +30,7 @@ class SearchBarInHeaderTableView: UITableView {
         
         translatesAutoresizingMaskIntoConstraints = false
         addSearchBar()
+        rowHeight = 60
     }
     
     required init?(coder: NSCoder) {

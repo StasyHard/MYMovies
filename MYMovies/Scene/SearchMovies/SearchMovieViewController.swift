@@ -26,8 +26,8 @@ class SearchMovieViewController: UIViewController {
         setupNavigationItem()
         
         //---------------------------------------------------------------------Временно
-        let provider = SearchMovietableViewProvider()
-        searchMovieView?.setSearchMovietableViewProvider(provider)
+//        let provider = SearchMovietableViewProvider()
+//        searchMovieView?.setSearchMovietableViewProvider(provider)
         //searchMovieView?.setSearchControllerProvider(self)
     }
     
@@ -38,6 +38,14 @@ class SearchMovieViewController: UIViewController {
 }
 
 extension SearchMovieViewController: SearchMovieViewInterface {
+    func setTableViewProvider(_ provider: TableViewProvider) {
+        searchMovieView?.setSearchMovietableViewProvider(provider)
+    }
+    
+    func reloadDataInTableView() {
+        searchMovieView?.reloadDataSearchMovietableView()
+    }
+    
     
 }
 

@@ -18,7 +18,7 @@ class SearchMovieView: UIView {
     private weak var container: (SearchMovieViewsActions & SearchTableViewProvider)?
     
     private let searchMovietableView: SearchBarInHeaderTableView = {
-        let tableView = SearchBarInHeaderTableView(frame: .zero, style: .grouped)
+        let tableView = SearchBarInHeaderTableView(frame: .zero, style: .plain)
         return tableView
     }()
     
@@ -29,7 +29,6 @@ class SearchMovieView: UIView {
         self.backgroundColor = UIColor.AppColors.backgroundColor
         
         addSearchMovietableView()
-        //searchMovietableView.setSearchCTableViewProvider(container)
         registerSearchMovietableViewCell()
     }
     

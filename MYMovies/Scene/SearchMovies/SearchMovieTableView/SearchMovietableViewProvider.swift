@@ -10,8 +10,7 @@ import UIKit
 
 class SearchMovietableViewProvider: NSObject, TableViewProvider {
     
-    
-    let data = ["Популярные фильмы", "Популярные сериалы", "Новые фильмы", "Новые сериалы"]
+    var data = [String]()
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return data.count
