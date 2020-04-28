@@ -13,17 +13,29 @@ class MyMoviesViewController: UIViewController {
     //MARK: - Open properties
     var presenter: MyMoviesPresentation?
     
-
+    //MARK: - Private properties
+    private lazy var myMoviesView = view as? MyMoviesView
+    
+    //MARK: - Life cycle
+    override func loadView() {
+        view = MyMoviesView(frame: UIScreen.main.bounds, container: self)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        view.backgroundColor = .white
-
-      
     }
-
 }
 
 extension MyMoviesViewController: MyMoviesViewInterface {
+    func reloadDataInTableView() {
+        myMoviesView?.reloadDataMoviesInViewingTableView()
+    }
+    
+    func setTableViewProvider(_ provider: TableViewProvider) {
+        myMoviesView?.setMyMoviesTableViewProvider(provider)
+    }
+}
+
+extension MyMoviesViewController: MyMoviesViewsActions {
     
 }

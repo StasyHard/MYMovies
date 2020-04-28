@@ -25,6 +25,8 @@
 		567FBEF12455F179000C18B7 /* SearchMovietableViewProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 567FBEF02455F179000C18B7 /* SearchMovietableViewProvider.swift */; };
 		567FBEF32455F814000C18B7 /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 567FBEF22455F814000C18B7 /* SearchTableViewCell.swift */; };
 		567FBEF62456D00B000C18B7 /* SearchBarInHeaderTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 567FBEF52456D00B000C18B7 /* SearchBarInHeaderTableView.swift */; };
+		567FBEFB24574535000C18B7 /* MyMoviesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 567FBEFA24574535000C18B7 /* MyMoviesTableViewCell.swift */; };
+		567FBEFE24574799000C18B7 /* MyMoviesTableViewProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 567FBEFD24574799000C18B7 /* MyMoviesTableViewProvider.swift */; };
 		5682060324505508007F9A44 /* TableViewProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5682060224505508007F9A44 /* TableViewProvider.swift */; };
 		5682060624505993007F9A44 /* MoviesInViewingTableViewProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5682060524505993007F9A44 /* MoviesInViewingTableViewProvider.swift */; };
 		5682060824505F29007F9A44 /* MovieInViewing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5682060724505F29007F9A44 /* MovieInViewing.swift */; };
@@ -77,6 +79,8 @@
 		567FBEF02455F179000C18B7 /* SearchMovietableViewProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchMovietableViewProvider.swift; sourceTree = "<group>"; };
 		567FBEF22455F814000C18B7 /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
 		567FBEF52456D00B000C18B7 /* SearchBarInHeaderTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarInHeaderTableView.swift; sourceTree = "<group>"; };
+		567FBEFA24574535000C18B7 /* MyMoviesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyMoviesTableViewCell.swift; sourceTree = "<group>"; };
+		567FBEFD24574799000C18B7 /* MyMoviesTableViewProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyMoviesTableViewProvider.swift; sourceTree = "<group>"; };
 		5682060224505508007F9A44 /* TableViewProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewProvider.swift; sourceTree = "<group>"; };
 		5682060524505993007F9A44 /* MoviesInViewingTableViewProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesInViewingTableViewProvider.swift; sourceTree = "<group>"; };
 		5682060724505F29007F9A44 /* MovieInViewing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieInViewing.swift; sourceTree = "<group>"; };
@@ -160,9 +164,10 @@
 		56614D39245345DD00A29E6F /* MyMovies */ = {
 			isa = PBXGroup;
 			children = (
+				567FBEFC245745CA000C18B7 /* MyMoviesTableView */,
+				56614D3E2453467300A29E6F /* MyMoviesView.swift */,
 				56614D3A2453460D00A29E6F /* MyMoviesViewController.swift */,
 				56614D3C2453463100A29E6F /* MyMoviesPresenter.swift */,
-				56614D3E2453467300A29E6F /* MyMoviesView.swift */,
 			);
 			path = MyMovies;
 			sourceTree = "<group>";
@@ -209,6 +214,15 @@
 			children = (
 			);
 			path = TableViews;
+			sourceTree = "<group>";
+		};
+		567FBEFC245745CA000C18B7 /* MyMoviesTableView */ = {
+			isa = PBXGroup;
+			children = (
+				567FBEFA24574535000C18B7 /* MyMoviesTableViewCell.swift */,
+				567FBEFD24574799000C18B7 /* MyMoviesTableViewProvider.swift */,
+			);
+			path = MyMoviesTableView;
 			sourceTree = "<group>";
 		};
 		568205FF24504402007F9A44 /* MoviesInViewingTableView */ = {
@@ -495,6 +509,8 @@
 				567AFF0924489B8E00CE959E /* DataRepository.swift in Sources */,
 				56E3434624487E7700D6B440 /* MYMovies.xcdatamodeld in Sources */,
 				56614D3D2453463100A29E6F /* MyMoviesPresenter.swift in Sources */,
+				567FBEFB24574535000C18B7 /* MyMoviesTableViewCell.swift in Sources */,
+				567FBEFE24574799000C18B7 /* MyMoviesTableViewProvider.swift in Sources */,
 				567FBEF62456D00B000C18B7 /* SearchBarInHeaderTableView.swift in Sources */,
 				56E3433E24487E7700D6B440 /* SceneDelegate.swift in Sources */,
 				56D5DD65244DF34E000BB6BA /* MoviesInViewingTableViewCell.swift in Sources */,
